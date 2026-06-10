@@ -1,0 +1,16 @@
+{
+  "name": "hip-1342-impact-analysis",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Repository containing reports and supporting tools for HIP-1342 impact analysis",
+  "scripts": {
+    "start": "bash scripts/check-contract-execution-exceptions.sh && node scripts/check-trailing-calldata.js network-data/contract-execution-exceptions.csv --output network-data/analysis-results.csv",
+    "test": "node scripts/test-hip-1342.js && node scripts/check-trailing-calldata.js network-data/test-hip-1342-results.csv --mirror-node https://testnet.mirrornode.hedera.com"
+  },
+  "dependencies": {
+    "@hiero-ledger/sdk": "^2.85.0",
+    "dotenv": "^17.4.2",
+    "ethers": "^6.16.0",
+    "solc": "^0.8.35"
+  }
+}
